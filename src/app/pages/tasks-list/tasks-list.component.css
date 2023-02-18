@@ -1,0 +1,41 @@
+.tasks-container
+{
+  max-width: 920px;
+  margin: 50px auto 0;
+}
+
+.tasks
+{
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+.tasks-header
+{
+  font-size: clamp(20px, 3vw, 24px);
+}
+
+.tasks-list
+{
+  margin-top: 40px;
+  display: block;
+}
+
+.add-task
+{
+  display: block;
+  margin-top: 10px;
+  max-width: 100%;
+  background: transparent;
+  border: none;
+}
+
+.add-task-text
+{
+  margin-left: 12px;
+  font-size: 14px;;
+  margin-bottom: 0;
+  color: gray;
+}
+

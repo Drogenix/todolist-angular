@@ -1,0 +1,17 @@
+<div class="task-editor-container">
+  <div class="editor">
+    <textarea #textArea
+              (input)="onTextAreaChanged()"
+              class="text-editor"
+              maxlength="180"
+              placeholder="Введите название задачи"></textarea>
+  </div>
+  <div class="editor-buttons">
+    <button class="editor-button ms-2 create"
+            [ngClass]="isAreaEmpty ? 'button-disabled' : ''"
+            [disabled]="isAreaEmpty"
+            (click)="onCreateButtonClick()">Добавить задачу</button>
+    <button class="editor-button cancel"
+            (click)="close()">Отмена</button>
+  </div>
+</div>

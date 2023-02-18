@@ -1,0 +1,27 @@
+<div *ngIf="tasks" class="tasks-container">
+  <div class="tasks">
+    <h1 class="tasks-header">Задачи на сегодня</h1>
+    <div class="tasks-list">
+      <task *ngFor="let task of tasks"
+            [task]="task"
+            (deleteTask)="deleteTask($event)"
+            (updateState)="updateTasks()">
+      </task>
+    </div>
+    <task-editor *ngIf="isEditorOpen; else addTask"
+                  (createTask)="createTask($event)"
+                  (cancelTaskCreate)="toggleEditor(false)">
+    </task-editor>
+    <ng-template #addTask>
+      <button class="add-task"
+              (click)="toggleEditor(true)">
+        <div class="d-flex">
+          <svg width="24px" height="24px" viewBox="0 0 24 24" stroke="#ff7e7e" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 12H20M12 4V20" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <p class="add-task-text">Добавить задачу</p>
+        </div>
+      </button>
+    </ng-template>
+  </div>
+</div>
